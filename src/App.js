@@ -1,20 +1,15 @@
-import React from "react";
-import "./style/style.css";
-import { getTemp } from "./components/api/getTemp";
+import React from 'react';
+import {Provider} from 'react-redux';
+import './style/style.css';
+import store from './components/redux/store';
+import Main from './components/Main';
+
 
 function App() {
   return (
-    <div id="app">
-      <div id="background">
-        <div></div>
-      </div>
-      <div id="main">
-        <div id="title">
-          <h1>Website kiểm tra nhiệt độ</h1>
-          <div id="title-result"></div>
-        </div>
-      </div>
-    </div>
+    <Provider store={store}>
+      <Main />
+    </Provider>
   );
 }
 

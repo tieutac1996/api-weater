@@ -2,6 +2,7 @@
 body {
   font-family: "Pacifico", cursive;
   margin: 0;
+  font-size: 20px;
 }
 
 #app {
@@ -48,6 +49,103 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
+}
+
+#app #main #form input {
+  display: block;
+  height: 40px;
+  width: 400px;
+  margin: auto;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: transparent;
+  border: 1px solid #fff;
+  color: white;
+  font-size: 16px;
+}
+
+#app #main #form input::-webkit-input-placeholder {
+  color: white;
+}
+
+#app #main #form input:-ms-input-placeholder {
+  color: white;
+}
+
+#app #main #form input::-ms-input-placeholder {
+  color: white;
+}
+
+#app #main #form input::placeholder {
+  color: white;
+}
+
+#app #main #form button {
+  margin: 15px 0;
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+#app #main #form button span {
+  display: block;
+  font-size: 16px;
+  padding: 15px;
+  font-weight: bold;
+}
+
+#app #result {
+  width: 600px;
+  left: 50%;
+  top: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  background-color: #000;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#app #result > div {
+  position: relative;
+  padding: 50px 20px;
+}
+
+#app #result > div b {
+  color: #03da55;
+  letter-spacing: 1px;
+}
+
+#app #result > div > span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: block;
+  color: red;
+  border-radius: 50%;
+}
+
+#app #result > div > span:hover {
+  cursor: pointer;
+}
+
+#app #result h2 {
+  color: #c4c97c;
+}
+
+#app #result #result-detail {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+}
+
+#app #result #result-detail span {
+  border: 1px solid #fff;
+  padding: 5px;
 }
 
 @-webkit-keyframes background {
