@@ -201,4 +201,26 @@ body {
     background-size: 100%;
   }
 }
+
+@media only screen and (max-width: 720px) {
+  #main {
+    width: 100vw !important;
+  }
+  #main #title {
+    padding: 20px;
+  }
+  #main #title input {
+    width: 100% !important;
+  }
+  #main h1 {
+    font-size: 30px;
+  }
+  #app #result {
+    width: 100vw !important;
+  }
+  #app #result #result-detail {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+  }
+}
 /*# sourceMappingURL=style.css.map */
