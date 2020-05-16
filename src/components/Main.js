@@ -34,6 +34,7 @@ class Main extends Component {
   }
 
   render() {
+    console.log(this.props.cityName);
     return (
       <div id="app">
         <div id="background">
