@@ -159,4 +159,33 @@ body {
   }
   }
 }
+@keyframes background {
+  0% {
+    background-position: center;
+    background-size: 300%;
+  }
+  25% {
+    background-position: top left;
+    background-size: 400%;
+  }
+  50% {
+    background-position: top right;
+    background-size: 300%;
+  }
+  75% {
+    background-position: bottom right;
+    background-size: 400%;
+  }
+
+  100% {
+    background-position: center;
+    background-size: 300%;
+  }
+}
+#app{
+#background{
+  background-size: cover;
+}
+
+}
 }
