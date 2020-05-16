@@ -4,6 +4,7 @@ body {
   font-family: "Pacifico", cursive;
   margin: 0;
   font-size: 20px;
+  background-color: #000;
 }
 
 #app {
@@ -11,8 +12,11 @@ body {
   width: 100vw;
   height: 100vh;
   #background {
+    -webkit-animation-name: background;
     animation-name: background;
-    animation-duration: 60s;
+    -webkit-animation-duration: 12s;
+    animation-duration: 12s;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
     position: absolute;
     left: 0;
@@ -20,6 +24,7 @@ body {
     background: url("../image/194006.jpg");
     background-position: center;
     background-size: 100%;
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
     z-index: 1;
@@ -38,7 +43,6 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-
     #form {
       input {
         display: block;
@@ -51,6 +55,18 @@ body {
         border: 1px solid #fff;
         color: white;
         font-size: 16px;
+      }
+      input::-webkit-input-placeholder {
+        color: white;
+      }
+      input::-moz-placeholder {
+        color: white;
+      }
+      input:-ms-input-placeholder {
+        color: white;
+      }
+      input::-ms-input-placeholder {
+        color: white;
       }
       input::placeholder {
         color: white;
@@ -79,19 +95,19 @@ body {
     > div {
       position: relative;
       padding: 50px 20px;
-    b{
-        color:rgb(3, 218, 85);
+      b {
+        color: rgb(3, 218, 85);
         letter-spacing: 1px;
-    }
+      }
       > span {
         position: absolute;
         top: 20px;
         right: 20px;
         display: block;
-        color:red;
+        color: red;
         border-radius: 50%;
-        &:hover{
-            cursor: pointer;
+        &:hover {
+          cursor: pointer;
         }
       }
     }
@@ -108,6 +124,33 @@ body {
         padding: 5px;
       }
     }
+  }
+}
+@-webkit-keyframes background {
+  0% {
+    background-position: center;
+    background-size: 100%;
+  }
+  20% {
+    background-position: top left;
+    background-size: 115%;
+  }
+  40% {
+    background-position: top right;
+    background-size: 130%;
+  }
+  60% {
+    background-position: bottom right;
+    background-size: 130%;
+  }
+
+  80% {
+    background-position: bottom left;
+    background-size: 115%;
+  }
+  100% {
+    background-position: center;
+    background-size: 100%;
   }
 }
 @keyframes background {
@@ -138,54 +181,78 @@ body {
   }
 }
 
+
 @media only screen and (max-width: 720px) {
-#main{
-  width: 100vw!important;
-  #title{
-    padding: 20px;
-    input{
-      width: 100%!important;
+  #main {
+    width: 100vw !important;
+    #title {
+      padding: 20px;
+      input {
+        width: 100% !important;
+      }
+    }
+    h1 {
+      font-size: 30px;
     }
   }
-  h1{
-    font-size: 30px;;
+  #app {
+    #background {
+      background-size: 300%!important;
+      background-position:bottom left!important ;
+    }
+    #result {
+      width: 100vw !important;
+      #result-detail {
+        grid-template-columns: 1fr !important;
+      }
+    }
   }
-}
-#app{
-  #result{
-    width: 100vw!important;
-  #result-detail{
-    grid-template-columns: 1fr!important;
-  }
-  }
-}
-@keyframes background {
-  0% {
-    background-position: center;
-    background-size: 300%;
-  }
-  25% {
-    background-position: top left;
-    background-size: 400%;
-  }
-  50% {
-    background-position: top right;
-    background-size: 300%;
-  }
-  75% {
-    background-position: bottom right;
-    background-size: 400%;
-  }
+  @-webkit-keyframes background {
+    0% {
+      background-position: bottom left;
+      background-size: 250%;
+    }
+    25% {
+      background-position: top left;
+      background-size: 320%;
+    }
+    50% {
+      background-position: top right;
+      background-size: 250%;
+    }
+    75% {
+      background-position: bottom right;
+      background-size: 320%;
+    }
 
-  100% {
-    background-position: center;
-    background-size: 300%;
+    100% {
+      background-position: bottom left;
+      background-size: 250%;
+    }
   }
-}
-#app{
-#background{
-  background-size: cover;
-}
+  @keyframes background {
+    0% {
+      background-position: bottom left;
+      background-size: 250%;
+    }
+    25% {
+      background-position: top left;
+      background-size: 320%;
+    }
+    50% {
+      background-position: top right;
+      background-size: 250%;
+    }
+    75% {
+      background-position: bottom right;
+      background-size: 320%;
+    }
 
-}
+    100% {
+      background-position: bottom left;
+      background-size: 250%;
+    }
+  }
+ 
+
 }

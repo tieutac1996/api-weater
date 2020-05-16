@@ -3,6 +3,7 @@ body {
   font-family: "Pacifico", cursive;
   margin: 0;
   font-size: 20px;
+  background-color: #000;
 }
 
 #app {
@@ -13,17 +14,18 @@ body {
 
 #app #background {
   -webkit-animation-name: background;
-          animation-name: background;
-  -webkit-animation-duration: 60s;
-          animation-duration: 60s;
+  animation-name: background;
+  -webkit-animation-duration: 12s;
+  animation-duration: 12s;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   position: absolute;
   left: 0;
   top: 0;
   background: url("../image/194006.jpg");
   background-position: center;
   background-size: 100%;
+  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   z-index: 1;
@@ -215,6 +217,10 @@ body {
   #main h1 {
     font-size: 30px;
   }
+  #app #background {
+    background-size: 300% !important;
+    background-position: bottom left !important;
+  }
   #app #result {
     width: 100vw !important;
   }
@@ -224,50 +230,47 @@ body {
   }
   @-webkit-keyframes background {
     0% {
-      background-position: center;
-      background-size: 300%;
+      background-position: bottom left;
+      background-size: 250%;
     }
     25% {
       background-position: top left;
-      background-size: 400%;
+      background-size: 320%;
     }
     50% {
       background-position: top right;
-      background-size: 300%;
+      background-size: 250%;
     }
     75% {
       background-position: bottom right;
-      background-size: 400%;
+      background-size: 320%;
     }
     100% {
-      background-position: center;
-      background-size: 300%;
+      background-position: bottom left;
+      background-size: 250%;
     }
   }
   @keyframes background {
     0% {
-      background-position: center;
-      background-size: 300%;
+      background-position: bottom left;
+      background-size: 250%;
     }
     25% {
       background-position: top left;
-      background-size: 400%;
+      background-size: 320%;
     }
     50% {
       background-position: top right;
-      background-size: 300%;
+      background-size: 250%;
     }
     75% {
       background-position: bottom right;
-      background-size: 400%;
+      background-size: 320%;
     }
     100% {
-      background-position: center;
-      background-size: 300%;
+      background-position: bottom left;
+      background-size: 250%;
     }
-  }
-  #app #background {
-    background-size: cover;
   }
 }
 /*# sourceMappingURL=style.css.map */
