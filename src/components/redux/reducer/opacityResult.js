@@ -1,7 +1,7 @@
 
 const defaultWeather = {
     opacity: "0",
-    top: "-500px"
+    top: "-500px",
 }
 
 const opacityResult = (state = defaultWeather, action) => {
@@ -17,8 +17,10 @@ const opacityResult = (state = defaultWeather, action) => {
       ...state,
         opacity: "0",
         top: "-500px",
+
     };
   }
+  
   return state;
 };
 

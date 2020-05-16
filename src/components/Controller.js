@@ -17,5 +17,13 @@ export function setApiToStore(cityName,temp,feels_like,humidity,pressure) {
     feels_like,
     humidity,
     pressure,
+    isError: false
   };
 }
+
+export function errorGetData(){
+  return {
+    type : "ERROR_GET_DATA"
+  }
+}
+

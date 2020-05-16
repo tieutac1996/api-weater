@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Result from "./Result";
 import { connect } from "react-redux";
-import { showResult, setApiToStore } from "./Controller";
+import { showResult, setApiToStore, errorGetData } from "./Controller";
 import getTemp from "./api/getTemp";
 
 class Main extends Component {
@@ -28,8 +28,9 @@ class Main extends Component {
           res.pressure
         );
       })
-      .catch((err) => console.log(err));
-
+      .catch(() => {
+        this.props.errorGetData();
+      });
   }
 
   render() {
@@ -64,6 +65,4 @@ class Main extends Component {
   }
 }
 
-
-
-export default connect(null, { showResult, setApiToStore })(Main);
+export default connect(null, { showResult, setApiToStore, errorGetData })(Main);

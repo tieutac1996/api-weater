@@ -4,6 +4,7 @@ const defaultWeather = {
   feels_like: "",
   humidity: "",
   pressure: "",
+  isError: false
 };
 
 function rounding(value) {
@@ -20,10 +21,17 @@ const getApiData = (state = defaultWeather, action) => {
     return {
       ...state,
       cityName: action.cityName,
-      temp: action.temp - kelvins,
+      temp: rounding(action.temp - kelvins),
       feels_like: rounding(action.feels_like - kelvins),
       humidity: action.humidity,
       pressure: action.pressure,
+      isError: action.isError
+    };
+  }
+  if (action.type === "ERROR_GET_DATA") {
+    return {
+      ...state,
+      isError: true,
     };
   }
   return state;
