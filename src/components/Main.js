@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import Result from "./Result";
 import { connect } from "react-redux";
-import { showResult, setApiToStore, errorGetData } from "./Controller";
-import getTemp from "./api/getTemp";
+import {
+  showResult,
+  setApiToStore,
+  errorGetData,
+  fetchReduxThunk,
+} from "./Controller";
 
 class Main extends Component {
   constructor(props) {
@@ -18,19 +22,7 @@ class Main extends Component {
   }
 
   getAPI() {
-    getTemp(this.state.cityName)
-      .then((res) => {
-        this.props.setApiToStore(
-          this.state.cityName,
-          res.temp,
-          res.feels_like,
-          res.humidity,
-          res.pressure
-        );
-      })
-      .catch(() => {
-        this.props.errorGetData();
-      });
+    this.props.fetchReduxThunk(this.state.cityName);
   }
 
   render() {
@@ -65,4 +57,9 @@ class Main extends Component {
   }
 }
 
-export default connect(null, { showResult, setApiToStore, errorGetData })(Main);
+export default connect(null, {
+  showResult,
+  setApiToStore,
+  errorGetData,
+  fetchReduxThunk,
+})(Main);

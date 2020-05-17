@@ -13,28 +13,23 @@ class ShowData extends Component {
       isError,
     } = this.props;
 
-    const checkTemp = (value) => {
-      if (value > 34) {
-        return { color: "#ff3b3b" };
-      }
-      if ((value >= 30) & (value <= 34)) {
-        return { color: "#eaff3b" };
-      }
-      return { color: "#03da55" };
-    };
+    const checkTempColor = (value) =>
+      value > 34
+        ? { color: "#ff3b3b" }
+        : value < 30
+        ? { color: "#03da55" }
+        : { color: "#eaff3b" };
 
-    const checkHumidity = (value) => {
-      if (value < 40) {
-        return { color: "#ff3b3b" };
-      } else if (value >= 40 && value < 60) {
-        return { color: "#eaff3b" };
-      } else if (value >= 60 && value < 80) {
-        return { color: "#03da55" };
-      }
-      return {
-        color: "#7e26b5",
-      };
-    };
+    const checkHumidityColor = (value) =>
+      value < 40
+        ? { color: "#ff3b3b" }
+        : value >= 40 && value < 60
+        ? { color: "#eaff3b" }
+        : value >= 60 && value < 80
+        ? { color: "#03da55" }
+        : value >= 80 && value < 90
+        ? { color: "#7766fd" }
+        : { color: "#7e26b5" };
 
     if (!isError) {
       return (
@@ -43,14 +38,14 @@ class ShowData extends Component {
           <h2>Nhiệt độ tại: {cityName}</h2>
           <div id="result-detail">
             <span>
-              Nhiệt độ: <b style={checkTemp(temp)}>{temp}°C</b>
+              Nhiệt độ: <b style={checkTempColor(temp)}>{temp}°C</b>
             </span>
             <span>
               Nhiệt độ cảm nhận:{" "}
-              <b style={checkTemp(feels_like)}>{feels_like}°C</b>
+              <b style={checkTempColor(feels_like)}>{feels_like}°C</b>
             </span>
             <span>
-              Độ ẩm: <b style={checkHumidity(humidity)}>{humidity}%</b>
+              Độ ẩm: <b style={checkHumidityColor(humidity)}>{humidity}%</b>
             </span>
             <span>
               Áp suất: <b>{pressure}hPa</b>

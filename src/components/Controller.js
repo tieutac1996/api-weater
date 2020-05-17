@@ -1,3 +1,5 @@
+import getTemp from "./api/getTemp";
+
 export function showResult() {
   return {
     type: "SHOW_OPACITY",
@@ -9,7 +11,7 @@ export function hideResult() {
   };
 }
 
-export function setApiToStore(cityName,temp,feels_like,humidity,pressure) {
+export function setApiToStore(cityName, temp, feels_like, humidity, pressure) {
   return {
     type: "GET_API_DATA",
     cityName,
@@ -17,13 +19,30 @@ export function setApiToStore(cityName,temp,feels_like,humidity,pressure) {
     feels_like,
     humidity,
     pressure,
-    isError: false
+    isError: false,
   };
 }
 
-export function errorGetData(){
+export function errorGetData() {
   return {
-    type : "ERROR_GET_DATA"
-  }
+    type: "ERROR_GET_DATA",
+  };
 }
 
+export function fetchReduxThunk(cityName) {
+  return (dispatch) => {
+    getTemp(cityName)
+      .then((res) =>
+        dispatch(
+          setApiToStore(
+            cityName,
+            res.temp,
+            res.feels_like,
+            res.humidity,
+            res.pressure
+          )
+        )
+      )
+      .catch(() => dispatch(errorGetData()));
+  };
+}
