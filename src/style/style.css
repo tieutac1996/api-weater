@@ -233,7 +233,7 @@ body {
       background-position: bottom left;
       background-size: 250%;
     }
-    25% {
+    15% {
       background-position: top left;
       background-size: 320%;
     }
@@ -241,7 +241,7 @@ body {
       background-position: top right;
       background-size: 250%;
     }
-    75% {
+    65% {
       background-position: bottom right;
       background-size: 320%;
     }
@@ -255,7 +255,7 @@ body {
       background-position: bottom left;
       background-size: 250%;
     }
-    25% {
+    15% {
       background-position: top left;
       background-size: 320%;
     }
@@ -263,7 +263,7 @@ body {
       background-position: top right;
       background-size: 250%;
     }
-    75% {
+    65% {
       background-position: bottom right;
       background-size: 320%;
     }
